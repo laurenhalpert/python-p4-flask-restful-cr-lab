@@ -41,7 +41,7 @@ class Plants(Resource):
         response_dict = new_record.to_dict()
 
         response = make_response(
-            response_dict,
+            jsonify(response_dict),
             201,
         )
 
@@ -55,7 +55,7 @@ class PlantByID(Resource):
         response_dict = Plant.query.filter_by(id=id).first().to_dict()
 
         response = make_response(
-            response_dict,
+            jsonify(response_dict),
             200,
         )
 
